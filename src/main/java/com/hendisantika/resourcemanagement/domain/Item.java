@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -43,5 +44,19 @@ public class Item {
     @JoinColumn(name = "Category_Id_Item")
     @Valid
     private Category categoryItem;
+
+    @Enumerated(EnumType.STRING)
+    private ResourceStatus status;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Room_Id_Item")
+    private Room roomItem;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Member_Id_Item")
+    private Member memberItem;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "itemTranscation")
+    private List<Transaction> lstTranscationItem;
 
 }
