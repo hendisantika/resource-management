@@ -18,14 +18,17 @@ import java.util.List;
 @Entity
 @Data
 public class Building {
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "building", cascade = CascadeType.ALL)
-    List<Room> lstRoomInBuilding;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "building", cascade = CascadeType.ALL)
+    List<Room> lstRoomInBuilding;
+
     @Column
     @NotEmpty(message = "building name cannot be empty")
     private String name;
+
     @Column
     @NotEmpty(message = "building desc cannot be empty")
     private String description;
