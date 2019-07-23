@@ -3,6 +3,7 @@ package com.hendisantika.resourcemanagement.domain;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,4 +27,7 @@ public class Category {
 
     @Column
     private Integer attr;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoryItem", cascade = CascadeType.ALL)
+    private List<Item> lstCategoryItems;
 }
