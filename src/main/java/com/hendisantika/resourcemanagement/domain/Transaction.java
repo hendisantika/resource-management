@@ -30,4 +30,22 @@ public class Transaction {
     @Temporal(TemporalType.DATE)
     private Date dueDate;
 
+    @Column
+    private int status;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Item_Id_Transcation")
+    private Item itemTranscation;
+
+    @Enumerated(EnumType.STRING)
+    private TransactionStatus transactionStatus;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Member_Id_Transcation")
+    private Member memberTranscation;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Room_Id_Transcation")
+    private Room roomTanscation;
+
 }
