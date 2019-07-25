@@ -1,5 +1,6 @@
 package com.hendisantika.resourcemanagement.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 /**
@@ -12,6 +13,7 @@ import lombok.Data;
  * Time: 06:35
  */
 @Data
+@AllArgsConstructor
 public class Pair<K, V> {
     K key;
     V value;
