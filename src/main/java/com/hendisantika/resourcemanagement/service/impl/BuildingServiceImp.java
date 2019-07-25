@@ -1,9 +1,10 @@
-package com.hendisantika.resourcemanagement.service;
+package com.hendisantika.resourcemanagement.service.impl;
 
 import com.hendisantika.resourcemanagement.domain.Building;
 import com.hendisantika.resourcemanagement.domain.Pair;
 import com.hendisantika.resourcemanagement.domain.Room;
 import com.hendisantika.resourcemanagement.repository.BuildingRepository;
+import com.hendisantika.resourcemanagement.service.BuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
